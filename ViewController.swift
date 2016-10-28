@@ -33,6 +33,25 @@ class ViewController: UIViewController {
                     if let froningImage = UIImage(data: data) {
                         
                         self.imageView.image = froningImage
+                        
+                        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) // An array of search results. should contain only one item
+                        
+                        if documentsPath.count > 0 {
+                            
+                            let documentsDirectory = documentsPath[0]
+                            
+                            let savePath = documentsDirectory + "/froning.jpeg" // save image to local device
+                            
+                            do {
+                                
+                                try UIImageJPEGRepresentation(froningImage, 1)?.write(to: URL(fileURLWithPath: savePath))
+                                
+                            } catch {
+                                
+                                // process error
+                                
+                            }
+                        }
                     }
                 }
             }
