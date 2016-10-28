@@ -40,7 +40,7 @@ class ViewController: UIViewController {
                             
                             let documentsDirectory = documentsPath[0]
                             
-                            let savePath = documentsDirectory + "/froning.jpeg" // save image to local device
+                            let savePath = documentsDirectory + "/froning.jpg" // save image to local device
                             
                             do {
                                 
