@@ -15,6 +15,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) // An array of search results. should contain only one item
+        
+        if documentsPath.count > 0 {
+            
+            let documentsDirectory = documentsPath[0]
+            
+            let restorePath = documentsDirectory + "/froning.jpg" // save image to local device
+         
+            imageView.image = UIImage(contentsOfFile: restorePath)
+            
+        }
+        
+        
+        
+        /*
         let url = URL(string: "https://i.ytimg.com/vi/D1ze-f7jS2A/maxresdefault.jpg")!
         
         let request  = NSMutableURLRequest(url: url)
@@ -56,7 +71,7 @@ class ViewController: UIViewController {
                 }
             }
         }
-        task.resume()
+        task.resume() */
     }
     
     override func didReceiveMemoryWarning() {
